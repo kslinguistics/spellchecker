@@ -50,9 +50,10 @@ int logpoor5(int n){
 int main(void)
 {
 	// read dictionary data
-	// words are recorded in the form of '(word) (frequency)'
+	// "en_full.txt" is from https://github.com/hermitdave/FrequencyWords/blob/master/content/2016/en/en_full.txt
+	// words are recorded in the form of "(word) (frequency)"
 	std::map<std::string, int> dict;
-	std::ifstream words("en_110k.txt");
+	std::ifstream words("en_full.txt");
 	std::string str;
 	std::vector<std::string> data;
 	while(getline(words, str)){
