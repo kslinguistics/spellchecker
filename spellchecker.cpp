@@ -16,11 +16,15 @@ int d(std::string s1, std::string s2)
 	for(int i = 0; i != m + 1; i++){
 		for(int j = 0; j != n + 1; j++){
 			dp[i][j] = i + j;
+			// insertion
 			if(i > 0)	dp[i][j] = std::min(dp[i][j], dp[i - 1][j] + 1);
+			// deletion
 			if(j > 0)	dp[i][j] = std::min(dp[i][j], dp[i][j - 1] + 1);
+			// replacement
 			if(i > 0 && j > 0){
 				dp[i][j] = std::min(dp[i][j], dp[i - 1][j - 1] + 1 * (s1[i - 1] != s2[j - 1]));
 			}
+			// swap
 			if(i > 1 && j > 1){
 				if(s1[i - 1] == s2[j - 2] && s1[i - 2] == s2[j - 1]){
 					dp[i][j] = dp[i - 2][j - 2] + 1;
