@@ -9,7 +9,7 @@ struct ToLower{
 	}
 };
 
-// calculate Levenshtein distance between s1 and s2
+// calculate 'distance' between s1 and s2
 int d(std::string s1, std::string s2)
 {
 	int m = int(s1.size()), n = int(s2.size());
