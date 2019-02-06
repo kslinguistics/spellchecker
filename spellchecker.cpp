@@ -1,4 +1,5 @@
-/**** simple spell checker ****/
+/********* simple spell checker *********/
+/** for 2018A-Tue-02 linguistics class **/
 
 #include <bits/stdc++.h>
 
