@@ -50,10 +50,11 @@ int logpoor5(int n){
 int main(void)
 {
 	// read dictionary data
-	// "en_full.txt" is from https://github.com/hermitdave/FrequencyWords/blob/master/content/2016/en/en_full.txt
-	// words are recorded in the form of "(word) (frequency)"
+	// "en_full.txt" is the first 110k items of the word
+	// generated from https://github.com/hermitdave/FrequencyWords/blob/master/content/2016/en/en_full.txt
+	// items are recorded in the form of "(word) (frequency)"
 	std::map<std::string, int> dict;
-	std::ifstream words("en_full.txt");
+	std::ifstream words("en_110k.txt");
 	std::string str;
 	std::vector<std::string> data;
 	while(getline(words, str)){
@@ -65,7 +66,7 @@ int main(void)
 		int score = -100, score_tmp = -100, d_tmp = 0;
 		auto itr_max = dict.begin();
 		std::cin >> str;
-		if(dict[str] >= 100){ // the string is on the dictionary
+		if(dict[str] >= 3){ // the string is on the dictionary
 			std::cout << str << " ";
 		}else{ // otherwise
 			std::transform(str.begin(), str.end(), str.begin(), ToLower());
